@@ -27,4 +27,4 @@ Feel free to contribute to this repository by:
 
 ADDITIONAL INFORMATION:
 - radio Krov website: [radioKrov](http://radiotalas.dckrov.rs/public/dckrov)
-- Link to the AzuraCast documentation: https://www.azuracast.com/docs/
+- AzuraCast documentation: https://www.azuracast.com/docs/
