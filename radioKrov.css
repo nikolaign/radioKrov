@@ -1,0 +1,284 @@
+/*import google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400&display=swap');
+
+/*add moving text at the top*/
+#schedule-bar {
+  position: fixed; /* Change from relative to fixed */
+  top: 0; /* Pin it to the top of the viewport */
+  width: 100%; /* Ensure it spans the full width */
+  animation: move-words 15s linear;
+  display: none; /* Initially hide the element */
+}
+#schedule-bar span {
+  animation: linear, fade-in-out 5s ease-in-out;
+  color: #C3D6E9; /* Set text color */
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+@keyframes move-words {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+/*add header and footer*/
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%; /* Span the entire width */
+  height: 70px; /* Adjust height as needed */
+  background-color: rgba(34, 37, 47, 0.55);
+  color: #C3D6E9;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  animation: float2 12s ease-in-out infinite;
+
+}
+@keyframes float2 {
+  0%, 100% {
+     box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+     transform: translateY(0px);
+  }
+  50% {
+     box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+     transform: translateY(-4px);
+  }
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.footer {
+  position: fixed; /* Allows for absolute positioning of content within */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  width: 100%; /* Span the entire width */
+  height: 66px; /* Adjust height as needed */
+  background-color: rgba(34, 37, 47, 0.55);
+  text-align: center; /* Center the text content */
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  padding: 12px;
+  color: #C3D6E9;
+  border-radius: 15px 16px 0 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  animation: float1 12s ease-in-out infinite;
+}
+@keyframes float1 {
+  0%, 100% {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+    transform: translateY(0px);
+  }
+  50% {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+    transform: translateY(4px);
+  }
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.footer::first-line {
+  font-size: 1.2em; /* Adjust the font size as desired */
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+/* add transparency to radio player */
+[data-bs-theme] body.page-minimal .public-page .card {
+  background-color: rgba(34, 37, 47, 0.94); /* Adjusted for #22252F and transparency */
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 0px 23px rgba(0, 0, 0, 3);
+  animation: float 8s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+   box-shadow: 0px 0px 23px rgba(0, 0, 0, 3);
+    transform: translateY(0px);
+  }
+  50% {
+      box-shadow: 0px 0px 23px rgba(0, 0, 0, 3);
+    transform: translateY(-3px);
+  }
+}
+/* change title of player */
+[data-bs-theme] body.page-minimal .public-page .card .card-body .card-title {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    cursor: pointer;
+    animation: pulsate 10s ease-in-out infinite; /* Adjust speed here */
+}
+/* Define the animation keyframes title of player pulsating */
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6; /* Adjust intensity here */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Change pointer icon for logos at the bottom */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .clickable-image:hover {
+    filter: brightness(150%) contrast(180%) drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.5));
+  }
+}
+/*WITHOUT TEXT BOX*/
+.image-container1 {
+  /* Add any desired styling for the container */
+}
+.image-text1 {
+  pointer-events: none;
+  opacity: 0;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #C3D6E9;
+  position: absolute;
+  bottom: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
+}
+@media (min-width: 768px) {
+  .image-container1:hover .image-text1 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container1:hover .image-text1::before {
+    transform: scaleY(1);
+  }
+}
+@media (min-width: 1600px) { /* Adjust 1921px as needed */
+  .image-text1 {
+    display: none; /* Or visibility: hidden; for alternative hiding */
+  }
+}
+/*WITH TEXT BOX*/
+.image-container {
+  /* Add any desired styling for the container */
+}
+.image-text {
+  pointer-events: none;
+  opacity: 0;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
+  width: 210px; /* adjust to desired width */
+  height: auto; /* allows text to expand vertically */
+  padding: 10px; /* adds space between text and box edges */
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  overflow: hidden;
+  text-align: left;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  animation: float4 10s ease-in-out infinite;
+}
+/* Text box animation */
+.image-text::before {
+  content: "";
+  background-color: rgba(34, 37, 47, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
+}
+@keyframes float4 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+@media (min-width: 768px) {
+  .image-container:hover .image-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
+  }
+  .image-container:hover .image-text::before {
+    transform: scaleY(1);
+  }
+}
+/*customize emoji and fade out*/
+.click-emoji {
+  font-size: 25px; /* Adjust as desired */
+  transition: opacity 0.9s ease-out; /* Add this line */
+}
+
+iframe {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 3);
+  opacity: 0.94;
+  border-radius: 15px;
+  animation: floatf 12s ease-in-out infinite;
+}
+@keyframes floatf {
+  0%, 100% {
+   box-shadow: 0px 0px 24px rgba(0, 0, 0, 3);
+   transform: translateY(0px);
+  }
+  50% {
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 3);
+    transform: translateY(2px);
+  }
+}
+button22 {
+  background-color: #22252F; /* Make button fully transparent */
+  border: 0;
+  color: #C3D6E9; /* Set initial text color */
+  text-align: center;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 3px 14px;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  opacity: 0.8;
+  transition: color 0.8s ease-in-out; /* Transition for text color change */
+  cursor: pointer; /* Indicate clickable element */
+  animation: float9 9s ease-in-out infinite;
+
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff; /* Brighten text on hover/tap/focus */
+    background-color: #3c4048; /* Darken background on hover/tap/focus */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+}
+@keyframes float9 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
