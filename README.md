@@ -5,13 +5,13 @@ custom js and css code for public page of radio krov
 This repo contains custom JavaScript and CSS code for personalizing the AzuraCast application used by radio Krov. The code included here enhances the user experience and visual appeal of the radio's public-facing pages.
 
 FEATURES:
-Custom CSS: Style modifications to adjust the appearance of various elements such as layout, colors, fonts, and branding.
-Custom JavaScript: Interactive features beyond AzuraCast's default functionality, such as:
+- Custom CSS: Style modifications to adjust the appearance of various elements such as layout, colors, fonts, and branding.
+- Custom JavaScript: Interactive features beyond AzuraCast's default functionality, such as:
   - Experimental visual appearance: (e.g., floating elements, new icons, header and footer)
   - Interactive elements: (e.g., live chat, easter eggs)
 
 COMPATIBILITY:
-AzuraCast version: [latest]
+- AzuraCast version: [latest]
 
 USAGE:
 - Navigate to the branding section of your AzuraCast administration panel.
